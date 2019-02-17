@@ -1,0 +1,13 @@
+#!/bin/bash
+
+APP_DIR=/root/LinuxServerSetup
+
+# if first time run!
+if [ ! -d "$APP_DIR" ]; then
+	mkdir $APP_DIR
+	wget --no-check-certificate https://api.github.com/repos/TirsvadCMS/LinuxServerSetup/tarball/master
+        tar xpvf master -C $APP_DIR --strip-components=1
+else
+        cd $APP_DIR
+        bash setup/start.sh
+fi
