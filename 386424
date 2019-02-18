@@ -12,8 +12,8 @@ if [ ! -d "LinuxServerSetup" ]; then
                         # Fall back to uname, e.g. "Linux <version>", also works for BSD, etc.
                         OS=$(uname -s)
                         OS_VER=$(uname -r)
-                fi                
-        
+                fi
+
 
                 case $OS in
                         "Debian GNU/Linux"|"Ubuntu")
@@ -28,7 +28,6 @@ if [ ! -d "LinuxServerSetup" ]; then
         cd LinuxServerSetup
         git submodule init
         git submodule update
-else
-        cd LinuxServerSetup
-        bash setup/start.sh
 fi
+cd LinuxServerSetup
+bash setup/start.sh
